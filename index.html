@@ -714,7 +714,160 @@ section { padding: 120px 60px; }
   background: var(--red); border-color: var(--red); color: var(--white);
 }
 .featured .btn-enroll:hover { background: var(--white); color: var(--black); border-color: var(--white); }
-
+/* ══════════════════════════════════════
+   MOBILE — max-width: 768px
+══════════════════════════════════════ */
+@media (max-width: 768px) {
+  section { padding: 64px 20px; }
+ 
+  /* Hero */
+  #hero { min-height: 100svh; align-items: flex-end; }
+  .hero-content { padding: 0 20px 56px; }
+  .hero-title { font-size: clamp(52px, 14vw, 80px); line-height: 0.92; }
+  .hero-sub { font-size: 15px; margin-bottom: 36px; }
+  .hero-actions { gap: 20px; }
+  .btn-primary { padding: 14px 32px; font-size: 13px; }
+  .btn-ghost { font-size: 12px; }
+  .hero-scroll { display: none; }
+ 
+  /* Marquee */
+  .marquee-item { font-size: 16px; letter-spacing: 2px; padding: 0 28px; gap: 28px; }
+ 
+  /* Section titles */
+  .section-title { font-size: clamp(36px, 9vw, 56px); }
+ 
+  /* About */
+  #about { gap: 36px; }
+  .about-desc { font-size: 15px; }
+  .about-img-wrap { aspect-ratio: 16/10; }
+  .about-stats {
+    padding: 20px 24px;
+    gap: 16px;
+  }
+  .about-stat-val { font-size: 34px; }
+ 
+  /* Facilities */
+  .facilities-grid { grid-template-columns: 1fr; }
+  .facilities-header { margin-bottom: 40px; }
+  .facility-card { padding: 36px 28px; }
+  .facility-num { font-size: 52px; }
+ 
+  /* Programs */
+  .programs-grid { grid-template-columns: 1fr; gap: 16px; }
+  .programs-header { margin-bottom: 40px; }
+  .programs-header p { display: none; }
+  .program-card { padding: 32px 28px; }
+ 
+  /* Pricing */
+  #pricing { padding: 64px 20px; }
+  .pricing-header { margin-bottom: 40px; }
+  .pricing-toggle { margin-bottom: 40px; }
+  .pricing-toggle-track { width: 100%; }
+  .pricing-btn { padding: 12px 0; flex: 1; text-align: center; font-size: 12px; letter-spacing: 2px; }
+  .pricing-grid { gap: 16px; max-width: 100%; }
+  .price-card { padding: 36px 28px; }
+  .price-amount { font-size: 58px; }
+  .price-symbol { font-size: 22px; }
+ 
+  /* Gallery */
+  #gallery { padding: 64px 0; }
+  .gallery-header { padding: 0 20px; margin-bottom: 32px; }
+  .gallery-track { padding: 0 20px; gap: 12px; }
+  .gallery-img { width: 72vw; height: 52vw; min-height: 200px; }
+ 
+  /* Locations */
+  .locations-grid { margin-top: 40px; }
+  .location-card { padding: 36px 28px; }
+  .location-city { font-size: 38px; }
+ 
+  /* Contact */
+  .contact-grid { margin-top: 40px; gap: 40px; }
+  .contact-link { font-size: 15px; }
+  .contact-social-links a { font-size: 13px; word-break: break-all; }
+ 
+  /* Footer */
+  footer { padding: 36px 20px 24px; }
+  .footer-logo { font-size: 28px; letter-spacing: 4px; }
+  .footer-nav { gap: 12px 20px; }
+  .footer-copy, .footer-locations { font-size: 11px; }
+}
+ 
+/* ══════════════════════════════════════
+   SMALL MOBILE — max-width: 480px
+══════════════════════════════════════ */
+@media (max-width: 480px) {
+  section { padding: 56px 16px; }
+ 
+  /* Preloader */
+  .pre-logo { font-size: 48px !important; letter-spacing: 4px; }
+  .pre-num { font-size: 72px !important; }
+  .pre-tag { font-size: 9px; letter-spacing: 3px; }
+ 
+  /* Nav */
+  nav { padding: 18px 16px; }
+  nav.scrolled { padding: 12px 16px; }
+  .nav-logo { font-size: 22px; letter-spacing: 3px; }
+ 
+  /* Hero */
+  .hero-content { padding: 0 16px 48px; }
+  .hero-title { font-size: clamp(44px, 13vw, 64px); }
+  .hero-tag { font-size: 10px; letter-spacing: 2.5px; }
+  .hero-tag::before { width: 24px; }
+  .hero-sub { font-size: 14px; }
+  .hero-actions { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .btn-primary { padding: 14px 36px; width: 100%; text-align: center; clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%); }
+ 
+  /* Marquee */
+  .marquee-item { font-size: 14px; letter-spacing: 1px; padding: 0 20px; gap: 20px; }
+ 
+  /* About */
+  .about-desc { font-size: 14px; }
+  .about-points li { font-size: 13px; }
+  .about-stats { grid-template-columns: 1fr 1fr; gap: 12px; padding: 16px 20px; }
+  .about-stat-val { font-size: 30px; }
+  .about-stat-label { font-size: 10px; }
+ 
+  /* Facilities */
+  .facility-card { padding: 28px 20px; }
+  .facility-name { font-size: 18px; }
+  .facility-desc { font-size: 13px; }
+ 
+  /* Programs */
+  .program-card { padding: 28px 20px; }
+  .program-name { font-size: 26px; }
+  .program-desc { font-size: 13px; }
+ 
+  /* Pricing */
+  #pricing { padding: 56px 16px; }
+  .pricing-btn { font-size: 11px; letter-spacing: 1px; padding: 12px 0; }
+  .price-card { padding: 28px 20px; }
+  .price-amount { font-size: 52px; }
+  .price-plan-name { font-size: 12px; margin-bottom: 24px; }
+  .price-features li { font-size: 12px; }
+ 
+  /* Gallery */
+  .gallery-header { padding: 0 16px; }
+  .gallery-track { padding: 0 16px; gap: 10px; }
+  .gallery-img { width: 80vw; height: 56vw; min-height: 180px; }
+ 
+  /* Locations */
+  .location-card { padding: 28px 20px; }
+  .location-city { font-size: 32px; }
+  .location-detail { font-size: 13px; }
+ 
+  /* Contact */
+  #contact { padding: 56px 16px; }
+  .contact-grid { margin-top: 32px; gap: 36px; }
+  .contact-link { font-size: 14px; word-break: break-all; }
+  .form-input, .form-select, .form-textarea { font-size: 16px; /* prevents iOS zoom */ }
+  .btn-submit { clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%); }
+ 
+  /* Footer */
+  .footer-top { gap: 24px; }
+  .footer-nav { gap: 10px 16px; }
+  .footer-bottom { gap: 8px; }
+  .footer-locations { display: none; }
+}
 /* GALLERY */
 #gallery { padding: 120px 0; background: var(--black); }
 .gallery-header { padding: 0 60px; margin-bottom: 60px; }
