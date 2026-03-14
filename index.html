@@ -149,16 +149,13 @@ section { padding: clamp(72px,10vh,130px) clamp(20px,5vw,72px); }
   position: relative;
   overflow: hidden;
 
-  /* Default: below viewport */
-  opacity: 0;
-  transform: translateY(70px) scale(0.96);
 
   /* Smooth transition for ENTER (scroll down) */
   transition:
-    opacity .75s var(--ease-out-expo),
-    transform .75s var(--ease-out-expo),
-    border-color .4s,
-    box-shadow .4s;
+    opacity 0.75s var(--ease-out-expo),
+    transform 0.75s var(--ease-out-expo),
+    border-color 0.4s,
+    box-shadow 0.4s;
   will-change: opacity, transform;
 }
 
