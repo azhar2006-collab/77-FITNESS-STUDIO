@@ -64,6 +64,29 @@ nav.solid { background: rgba(0,0,0,.95); backdrop-filter: blur(24px); border-col
 /* MOBILE MENU */
 #mobile-menu { position: fixed; inset: 0; z-index: 950; background: var(--off-black); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 120px 36px 60px; clip-path: inset(0 0 100% 0); transition: clip-path .7s var(--ease-in-out); pointer-events: none; }
 #mobile-menu.open { clip-path: inset(0 0 0 0); pointer-events: all; }
+.nav-close{
+  display:none;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.10);
+  color:var(--white);
+  font-size:22px;
+  line-height:1;
+  border-radius:999px;
+  padding:0;
+  position:absolute;
+  top:18px;
+  right:18px;
+  z-index:3;
+  transition:background .25s,border-color .25s,transform .25s;
+  -webkit-tap-highlight-color:transparent;
+}
+.nav-close:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);transform:scale(1.02);}
+body.menu-open .nav-close{display:inline-flex;}
+body.menu-open .nav-burger{display:none;}
 .mm-link { font-family: 'Bebas Neue', sans-serif; font-size: clamp(38px,10vw,64px); letter-spacing: 3px; text-decoration: none; color: var(--g3); display: block; margin-bottom: 4px; transform: translateX(-30px); opacity: 0; transition: transform .5s var(--ease-out-expo), opacity .5s, color .2s; }
 #mobile-menu.open .mm-link { transform: translateX(0); opacity: 1; }
 #mobile-menu.open .mm-link:nth-child(1){transition-delay:.1s} #mobile-menu.open .mm-link:nth-child(2){transition-delay:.15s} #mobile-menu.open .mm-link:nth-child(3){transition-delay:.2s} #mobile-menu.open .mm-link:nth-child(4){transition-delay:.25s} #mobile-menu.open .mm-link:nth-child(5){transition-delay:.3s} #mobile-menu.open .mm-link:nth-child(6){transition-delay:.35s}
@@ -233,6 +256,44 @@ section { padding: clamp(72px,10vh,130px) clamp(20px,5vw,72px); }
 .ob-close { position: absolute; top: 10px; right: 12px; background: none; border: none; color: var(--g3); font-size: 16px; cursor: pointer; transition: color .3s; line-height: 1; }
 .ob-close:hover { color: var(--white); }
 
+/* APPLY OFFER CHECKBOX (enabled after plan pick) */
+#offer-apply{
+  display:block;
+  opacity:.55;
+  pointer-events:none;
+  background:rgba(200,16,46,.08);
+  border:1px solid var(--red-dim);
+  border-left:4px solid var(--red);
+  padding:14px 16px;
+}
+#offer-apply.oa-active{
+  opacity:1;
+  pointer-events:auto;
+}
+#offer-apply label{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  cursor:pointer;
+}
+#offer-apply input{
+  margin-top:2px;
+  accent-color:var(--red);
+}
+.oa-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:10px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--white);
+}
+.oa-sub{
+  font-size:12px;
+  color:var(--g4);
+  margin-top:4px;
+  line-height:1.55;
+}
+
 /* ═══════ CONTACT ═══════ */
 #contact { background: var(--black); }
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px,7vw,96px); margin-top: 72px; }
@@ -362,6 +423,7 @@ footer { background: var(--off-black); border-top: 1px solid var(--g1); padding:
 
 <!-- MOBILE MENU -->
 <div id="mobile-menu">
+  <button class="nav-close" id="navClose" aria-label="Close Menu" type="button">✕</button>
   <a href="index.html#about"      class="mm-link"><span class="mm-num">01</span>About</a>
   <a href="index.html#facilities" class="mm-link"><span class="mm-num">02</span>Facilities</a>
   <a href="index.html#programs"   class="mm-link"><span class="mm-num">03</span>Programs</a>
@@ -511,7 +573,7 @@ footer { background: var(--off-black); border-top: 1px solid var(--g1); padding:
     <div data-anim="right">
       <!-- OFFER BANNER -->
       <div id="offer-banner">
-        <button class="ob-close" onclick="closeBanner()">✕</button>
+        <button class="ob-close" id="ob-close" aria-label="Close offer" type="button">✕</button>
         <div class="ob-eyebrow" id="ob-eyebrow">Offer Applied</div>
         <div class="ob-text" id="ob-text">—</div>
         <div class="ob-savings" id="ob-savings">—</div>
@@ -552,6 +614,16 @@ footer { background: var(--off-black); border-top: 1px solid var(--g1); padding:
       <div class="form-group">
         <label class="form-lbl">Selected Plan</label>
         <input type="text" class="form-inp" id="f-plan" placeholder="Select a plan above, or type here" readonly>
+      </div>
+
+      <div class="form-group" id="offer-apply">
+        <label>
+          <input type="checkbox" id="f-apply-offer" checked>
+          <span>
+            <div class="oa-title">Apply offer</div>
+            <div class="oa-sub" id="offer-apply-text">Offer will be applied when you select a plan.</div>
+          </span>
+        </label>
       </div>
       
       <button class="btn-submit" id="submitBtn" onclick="sendToWhatsApp()">
@@ -645,9 +717,27 @@ window.addEventListener('scroll',()=>{
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('solid',scrollY>50),{passive:true});
 
 /* ── MOBILE MENU ── */
-const burger=document.getElementById('navBurger'),mmenu=document.getElementById('mobile-menu');
-burger.addEventListener('click',()=>{const o=mmenu.classList.toggle('open');burger.classList.toggle('active',o);document.body.classList.toggle('menu-open',o);});
-mmenu.querySelectorAll('.mm-link,.mm-cta').forEach(a=>a.addEventListener('click',()=>{mmenu.classList.remove('open');burger.classList.remove('active');document.body.classList.remove('menu-open');}));
+const burger=document.getElementById('navBurger'),
+      mmenu=document.getElementById('mobile-menu'),
+      navClose=document.getElementById('navClose');
+
+function openMenu(){
+  mmenu.classList.add('open');
+  burger.classList.add('active');
+  document.body.classList.add('menu-open');
+}
+
+function closeMenu(){
+  mmenu.classList.remove('open');
+  burger.classList.remove('active');
+  document.body.classList.remove('menu-open');
+}
+
+burger.addEventListener('click',()=> mmenu.classList.contains('open') ? closeMenu() : openMenu());
+if(navClose) navClose.addEventListener('click', closeMenu);
+mmenu.querySelectorAll('.mm-link,.mm-cta').forEach(a=>a.addEventListener('click', closeMenu));
+mmenu.addEventListener('click',(e)=>{ if(e.target===mmenu) closeMenu(); });
+document.addEventListener('keydown',(e)=>{ if(e.key==='Escape') closeMenu(); });
 
 /* ── GENERAL SCROLL REVEAL ── */
 document.querySelectorAll('[data-anim]').forEach(el=>{
@@ -809,32 +899,83 @@ document.querySelectorAll('[data-anim]').forEach(el=>{
 })();
 
 
-/* ══ PICK PLAN → OFFER BANNER + SCROLL TO FORM ══ */
+/* PICK PLAN + OFFER CHECKBOX (same behavior style as index1.html, simplified) */
 let activePlan = null;
+let offerApplied = false;
 
-function pickPlan(planName, discount, savings, price) {
-  activePlan = { planName, discount, savings, price };
-  document.getElementById('f-plan').value = `${planName} — ${discount} OFF (${price})`;
+function syncOfferCheckbox(){
+  const wrap=document.getElementById('offer-apply');
+  const cb=document.getElementById('f-apply-offer');
+  const txt=document.getElementById('offer-apply-text');
+  const planInp=document.getElementById('f-plan');
+  const banner=document.getElementById('offer-banner');
+  const obEyebrow=document.getElementById('ob-eyebrow');
+  const obText=document.getElementById('ob-text');
+  const obSavings=document.getElementById('ob-savings');
+  if(!wrap||!cb||!txt||!planInp) return;
 
-  document.getElementById('ob-eyebrow').textContent = `✓ ${discount} Offer Applied to Your Package`;
-  document.getElementById('ob-text').innerHTML = `You've selected the <strong>${planName}</strong> plan. This limited-time offer is locked in.`;
-  document.getElementById('ob-savings').textContent = `You save ${savings}`;
+  if(!activePlan){
+    wrap.classList.remove('oa-active');
+    cb.checked=false;
+    cb.disabled=true;
+    offerApplied=false;
+    txt.textContent='Select a plan above to unlock this offer.';
+    planInp.value='';
+    planInp.placeholder='Select a plan above';
+    if(banner) banner.style.display='none';
+    return;
+  }
 
-  const banner = document.getElementById('offer-banner');
-  banner.style.display = 'block';
-  banner.style.animation = 'none';
-  void banner.offsetWidth;
-  banner.style.animation = 'bannerIn .5s var(--ease-out-expo) forwards';
+  wrap.classList.add('oa-active');
+  cb.disabled=false;
+  cb.checked=offerApplied;
 
-  document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if(offerApplied){
+    planInp.value=`${activePlan.planName} — ${activePlan.discount} OFF (${activePlan.price})`;
+    if(banner&&obEyebrow&&obText&&obSavings){
+      banner.style.display='block';
+      obEyebrow.textContent='Offer Applied';
+      obText.innerHTML=`You've applied <strong>${activePlan.discount}</strong> to <strong>${activePlan.planName}</strong>.`;
+      obSavings.textContent=`You save ${activePlan.savings}`;
+    }
+  }else{
+    planInp.value='';
+    planInp.placeholder='Tick "Apply offer" to confirm selected plan';
+    if(banner) banner.style.display='none';
+  }
 }
 
-function closeBanner() {
-  const b = document.getElementById('offer-banner');
-  b.style.transition = 'opacity .3s, transform .3s';
-  b.style.opacity = '0'; b.style.transform = 'translateY(-12px)';
-  setTimeout(()=>{ b.style.display='none'; b.style.opacity=''; b.style.transform=''; b.style.transition=''; }, 320);
+function pickPlan(planName, discount, savings, price){
+  activePlan={planName,discount,savings,price};
+  offerApplied=false;
+  syncOfferCheckbox();
+  document.getElementById('contact').scrollIntoView({behavior:'smooth',block:'start'});
 }
+
+/* checkbox + close button */
+(function(){
+  const cb=document.getElementById('f-apply-offer');
+  const close=document.getElementById('ob-close');
+  if(!cb) return;
+  cb.addEventListener('change',()=>{
+    const wasApplied=offerApplied;
+    offerApplied=!!cb.checked;
+    if(!wasApplied&&offerApplied){
+      alert('Offer applied to your selected plan.');
+    }
+    syncOfferCheckbox();
+  });
+  if(close){
+    close.addEventListener('click',()=>{
+      const banner=document.getElementById('offer-banner');
+      if(banner) banner.style.display='none';
+      cb.checked=false;
+      offerApplied=false;
+      syncOfferCheckbox();
+    });
+  }
+  syncOfferCheckbox();
+})();
 
 /* ══ WHATSAPP SUBMISSION ══ */
 function sendToWhatsApp() {
@@ -853,7 +994,7 @@ function sendToWhatsApp() {
     return;
   }
 
-  const offerLine = activePlan
+  const offerLine = (activePlan && offerApplied)
     ? `🏷️ *Offer Applied:* ${activePlan.discount} OFF — You save ${activePlan.savings}`
     : '';
 
