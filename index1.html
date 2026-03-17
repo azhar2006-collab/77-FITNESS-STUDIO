@@ -2637,11 +2637,7 @@
         <div class="fac-sub">Flow</div>
         <div class="fac-desc">Quiet corners with comfortable seating and Wi-Fi for a smooth transition between work and
           workouts.</div>
-        <div class="fac-thumb">
-          <img
-            src="assets/c__Users_SYED_AZHAR_HUSSAIN_A_AppData_Roaming_Cursor_User_workspaceStorage_dbd4ef504040d8ebeee1992e193267f6_images_Screenshot_2026-03-14_194051-78de800b-46fd-4ce2-87d4-31dbb0e3b8be.png"
-            alt="Work area and Wi-Fi space at 77 Fitness Studio">
-        </div>
+     
       </div>
     </div>
   </section>
@@ -2702,69 +2698,80 @@
     </div>
   </section>
 
-  <!-- PRICING -->
-  <section id="pricing">
-    <div class="price-header" data-anim>
-      <div class="s-label">Membership</div>
-      <h2 class="s-title" style="font-size:clamp(32px,5vw,72px)">Simple, transparent plans<br>that <em>reward
-          consistency.</em></h2>
-      <p class="price-subtitle">All memberships include full facility access and group classes. Limited-time offers
-        active now.</p>
+<!-- PRICING — no toggle, three fixed cards -->
+<section id="pricing">
+  <div class="price-header" data-anim>
+    <div class="s-label">Membership</div>
+    <h2 class="s-title" style="font-size:clamp(32px,5vw,72px)">Simple, transparent plans<br>that <em>reward consistency.</em></h2>
+    <p class="price-subtitle">All memberships include full facility access and group classes. Limited-time offers active now.</p>
+  </div>
+
+  <div class="price-grid">
+
+    <!-- STARTER -->
+    <div class="price-card" id="pc1" data-stagger="0">
+      <div class="offer-strip">
+        <span class="discount-badge">5% OFF</span>
+        <span class="plan-tag">Limited Offer</span>
+      </div>
+      <div class="plan-name">Starter</div>
+      <div class="price-orig">₹16,367 &nbsp;<span class="saved-lbl">Save ₹1468</span></div>
+      <div class="price-amt"><span class="price-sym">₹</span><span id="pv1">6,999</span></div>
+      <div class="price-per">per month</div>
+      <div class="price-divider"></div>
+      <div class="price-desc">Perfect for getting started, forming habits, or short-term goal phases.</div>
+      <ul class="price-features">
+        <li>Full gym access</li>
+        <li>Group classes included</li>
+        <li>Basic onboarding assessment</li>
+      </ul>
+      <button class="btn-enroll" onclick="pickPlan('Starter Monthly','5%','₹350','₹6,649')">register Now</button>
     </div>
-    <div class="price-grid">
-      <div class="price-card" data-anim style="--d:0s">
-        <div class="offer-strip"><span class="discount-badge">5% OFF</span><span class="plan-tag-lbl">Limited
-            Offer</span></div>
-        <div class="plan-name">Starter</div>
-        <div class="price-orig">₹7,367 &nbsp;<span class="saved-lbl">Save ₹368</span></div>
-        <div class="price-amt"><span class="price-sym">₹</span><span id="p1">6,999</span></div>
-        <div class="price-per">per month</div>
-        <div class="price-divider"></div>
-        <div class="price-desc">Perfect for getting started, forming habits, or short-term goal phases.</div>
-        <ul class="price-features">
-          <li>Full gym access</li>
-          <li>Group classes included</li>
-          <li>Basic onboarding assessment</li>
-        </ul>
-        <button class="btn-enroll" onclick="pickPlan('Starter Monthly','5%','₹368','₹6,999')">Register Now</button>
+
+    <!-- TRANSFORM -->
+    <div class="price-card star" id="pc2" data-stagger="140">
+      <div class="offer-strip">
+        <span class="discount-badge">10% OFF</span>
+        <span class="plan-tag">Most Popular</span>
       </div>
-      <div class="price-card star" data-anim style="--d:.15s">
-        <div class="offer-strip"><span class="discount-badge">10% OFF</span><span class="plan-tag-lbl">Most
-            Popular</span></div>
-        <div class="plan-name">Transform</div>
-        <div class="price-orig">₹24,443 &nbsp;<span class="saved-lbl">Save ₹2,444</span></div>
-        <div class="price-amt"><span class="price-sym">₹</span><span id="p2">21,999</span></div>
-        <div class="price-per">per 6 months</div>
-        <div class="price-divider"></div>
-        <div class="price-desc">Balanced commitment period to see visible, sustainable progress.</div>
-        <ul class="price-features">
-          <li>Everything in Starter</li>
-          <li>Priority slots for peak hours</li>
-          <li>Periodic progress reviews</li>
-          <li>Nutrition guidance sessions</li>
-        </ul>
-        <button class="btn-enroll" onclick="pickPlan('Transform Half-Yearly','10%','₹2,444','₹21,999')">Register
-          Now</button>
-      </div>
-      <div class="price-card" data-anim style="--d:.3s">
-        <div class="offer-strip"><span class="discount-badge">15% OFF</span><span class="plan-tag-lbl">Best Value</span>
-        </div>
-        <div class="plan-name">Elite</div>
-        <div class="price-orig">₹31,763 &nbsp;<span class="saved-lbl">Save ₹4,764</span></div>
-        <div class="price-amt"><span class="price-sym">₹</span><span id="p3">26,999</span></div>
-        <div class="price-per">per year</div>
-        <div class="price-divider"></div>
-        <div class="price-desc">For those fully committed to long-term strength, health, and transformation.</div>
-        <ul class="price-features">
-          <li>Everything in Transform</li>
-          <li>Best value per month</li>
-          <li>Priority for new program launches</li>
-          <li>Multi-location access</li>
-        </ul>
-        <button class="btn-enroll" onclick="pickPlan('Elite Annual','15%','₹4,764','₹26,999')">Register Now</button>
-      </div>
+      <div class="plan-name">Transform</div>
+      <div class="price-orig">₹28,443 &nbsp;<span class="saved-lbl">Save ₹4,444</span></div>
+      <div class="price-amt"><span class="price-sym">₹</span><span id="pv2">21,999</span></div>
+      <div class="price-per">per 6 months</div>
+      <div class="price-divider"></div>
+      <div class="price-desc">Balanced commitment period to see visible, sustainable progress.</div>
+      <ul class="price-features">
+        <li>Everything in Starter</li>
+        <li>Priority slots for peak hours</li>
+        <li>Periodic progress reviews</li>
+        <li>Nutrition guidance sessions</li>
+      </ul>
+      <button class="btn-enroll" onclick="pickPlan('Transform Half-Yearly','10%','₹2,200','₹19,799')">register Now</button>
     </div>
-  </section>
+
+    <!-- ELITE -->
+    <div class="price-card" id="pc3" data-stagger="280">
+      <div class="offer-strip">
+        <span class="discount-badge">15% OFF</span>
+        <span class="plan-tag">Best Value</span>
+      </div>
+      <div class="plan-name">Elite</div>
+      <div class="price-orig">₹31,763 &nbsp;<span class="saved-lbl">Save ₹6,764</span></div>
+      <div class="price-amt"><span class="price-sym">₹</span><span id="pv3">26,999</span></div>
+      <div class="price-per">per year</div>
+      <div class="price-divider"></div>
+      <div class="price-desc">For those fully committed to long-term strength, health, and transformation.</div>
+      <ul class="price-features">
+        <li>Everything in Transform</li>
+        <li>Best value per month</li>
+        <li>Priority for new program launches</li>
+        <li>Multi-location access</li>
+      </ul>
+      <button class="btn-enroll" onclick="pickPlan('Elite Annual','15%','₹4,050','₹22,949')">register Now</button>
+    </div>
+
+  </div>
+</section>
 
   <!-- GALLERY -->
   <div id="gallery">
@@ -2829,106 +2836,111 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div data-anim>
-      <div class="s-label">Contact</div>
-      <h2 class="s-title">Start a conversation with <br>77 Fitness Studio.</h2>
-    </div>
-    <div class="contact-grid">
-      <div data-anim="left">
-        <div class="contact-block">
-          <div class="cb-title">Direct Connect</div>
-          <a href="https://wa.me/917871177779" class="cb-link" target="_blank">+91 78711 77779 (WhatsApp)</a>
-          <a href="mailto:info@77fitness.in" class="cb-link">info@77fitness.in</a>
-        </div>
-        <div class="contact-block">
-          <div class="cb-title">Instagram</div>
-          <div class="cb-social">
-            <a href="https://www.instagram.com/77_fitness_studio_nungambakkam"
-              target="_blank">77_fitness_studio_nungambakkam</a>
-            <a href="https://www.instagram.com/77_fitness_studio_kodambakkam"
-              target="_blank">77_fitness_studio_kodambakkam</a>
-            <a href="https://www.instagram.com/77_fitness_studio_vadapalani"
-              target="_blank">77_fitness_studio_vadapalani</a>
-          </div>
-        </div>
-        <div class="contact-block">
-          <div class="cb-title">Hours</div>
-          <div class="cb-hours">Monday – Saturday<br><strong>5:00 AM – 11:00 PM</strong><br>Sunday<br><strong>6:00 AM –
-              10:00 PM</strong></div>
+<!-- CONTACT -->
+<section id="contact">
+  <div data-anim>
+    <div class="s-label">Contact</div>
+    <h2 class="s-title">Start a conversation with <br>77 Fitness Studio.</h2>
+  </div>
+  <div class="contact-grid">
+    <div data-anim="left">
+      <div class="contact-block">
+        <div class="cb-title">Direct Connect</div>
+        <a href="https://wa.me/917871177779" class="cb-link" target="_blank">+91 78711 77779 (WhatsApp)</a>
+        <a href="mailto:hello@77fitness.in" class="cb-link">hello@77fitness.in</a>
+      </div>
+      <div class="contact-block">
+        <div class="cb-title">Instagram</div>
+        <div class="cb-social">
+          <a href="https://www.instagram.com/77_fitness_studio_nungambakkam" target="_blank">77_fitness_studio_nungambakkam</a>
+          <a href="https://www.instagram.com/77_fitness_studio_kodambakkam" target="_blank">77_fitness_studio_kodambakkam</a>
+          <a href="https://www.instagram.com/77_fitness_studio_vadapalani" target="_blank">77_fitness_studio_vadapalani</a>
         </div>
       </div>
-      <div data-anim="right">
-        <div id="offer-banner">
-          <button class="ob-close" id="ob-close" aria-label="Close offer">✕</button>
-          <div class="ob-eyebrow" id="ob-eyebrow">Offer Applied</div>
-          <div class="ob-text" id="ob-text">—</div>
-          <div class="ob-savings" id="ob-savings">—</div>
-        </div>
+      <div class="contact-block">
+        <div class="cb-title">Hours</div>
+        <div class="cb-hours">Monday – Saturday<br><strong>5:00 AM – 11:00 PM</strong><br>Sunday<br><strong>6:00 AM – 10:00 PM</strong></div>
+      </div>
+    </div>
 
-        <div id="discount-highlight">
-          <div class="dh-row">
-            <div>
-              <div class="dh-label" id="dh-plan-lbl">Plan Selected</div>
-              <div class="dh-amount" id="dh-amount">—</div>
-              <div class="dh-sub" id="dh-sub">—</div>
-            </div>
-            <div style="text-align:right">
-              <div class="dh-label"></div>
-              <div class="dh-amount" id="dh-savings" style="color:var(--red)"></div>
-            </div>
-          </div>
-        </div>
-        <div class="form-group"><label class="form-lbl">Full Name</label><input type="text" class="form-inp" id="f-name"
-            placeholder="Your name"></div>
-        <div class="form-group"><label class="form-lbl">Mobile Number</label><input type="tel" class="form-inp"
-            id="f-phone" placeholder="+91 xxxxx xxxxx"></div>
-        <div class="form-group"><label class="form-lbl">Email</label><input type="email" class="form-inp" id="f-email"
-            placeholder="your@email.com"></div>
-        <div class="form-group"><label class="form-lbl">Preferred Location</label><select class="form-sel"
-            id="f-location">
-            <option>Any Location</option>
-            <option>Kodambakkam</option>
-            <option>Nungambakkam</option>
-            <option>Vadapalani</option>
-          </select></div>
-        <div class="form-group"><label class="form-lbl">Interested In</label><select class="form-sel" id="f-interest">
-            <option>General Membership</option>
-            <option>Personal Training</option>
-            <option>Body Transformation Program</option>
-            <option>Weight Loss Program</option>
-            <option>Weight Gain Program</option>
-            <option>Corporate / Group Enquiry</option>
-          </select></div>
-        <div class="form-group"><label class="form-lbl">Selected Plan</label><input type="text" class="form-inp"
-            id="f-plan" placeholder="Select a plan above, or type here" readonly></div>
-        <div class="form-group" id="offer-apply">
-          <label>
-            <input type="checkbox" id="f-apply-offer" checked>
-            <span>
-              <div class="oa-title">Apply offer</div>
-              <div class="oa-sub" id="offer-apply-text">Offer will be applied when you select a plan.</div>
-            </span>
-          </label>
-        </div>
-        <div class="form-group"><label class="form-lbl">Your Goals</label><textarea class="form-ta" id="f-goals"
-            placeholder="Tell us about what you're working towards..."></textarea></div>
-        <button class="btn-submit" id="submitBtn" onclick="sendToWhatsApp()">
-          <span class="wa-ico">💬</span>
-          <span id="btn-label">Submit Enquiry </span>
-        </button>
-        <div class="form-note">Tapping Submit opens WhatsApp with your details pre-filled and sends directly to our
-          team.</div>
-        <div id="submit-success">
-          <div class="ss-icon">✅</div>
-          <div class="ss-title">Enquiry Submitted!</div>
-          <div class="ss-sub">Your details have been sent to our team via WhatsApp. We'll respond shortly.</div>
-          <div class="ss-plan" id="ss-plan-info">—</div>
-        </div>
+    <div data-anim="right" id="contact-form-col">
+      <!-- OFFER BANNER -->
+      <div id="offer-banner">
+        <button class="ob-close" id="ob-close" aria-label="Close offer" type="button">✕</button>
+        <div class="ob-eyebrow" id="ob-eyebrow">Offer Applied</div>
+        <div class="ob-text" id="ob-text">—</div>
+        <div class="ob-savings" id="ob-savings">—</div>
       </div>
+
+      <div class="form-group">
+        <label class="form-lbl">Full Name *</label>
+        <input type="text"  class="form-inp" id="f-name"  placeholder="Your name">
+        <div class="field-err" id="err-name">Please enter your name.</div>
+      </div>
+      <div class="form-group">
+        <label class="form-lbl">Mobile Number *</label>
+        <input type="tel"   class="form-inp" id="f-phone" placeholder="+91 xxxxx xxxxx">
+        <div class="field-err" id="err-phone">Please enter your mobile number.</div>
+      </div>
+      <div class="form-group">
+        <label class="form-lbl">Email</label>
+        <input type="email" class="form-inp" id="f-email" placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label class="form-lbl">Preferred Location</label>
+        <select class="form-sel" id="f-location">
+          <option>Any Location</option>
+          <option>Kodambakkam</option>
+          <option>Nungambakkam</option>
+          <option>Vadapalani</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-lbl">Interested In</label>
+        <select class="form-sel" id="f-interest">
+          <option>General Membership</option>
+          <option>Personal Training</option>
+          <option>Body Transformation Program</option>
+          <option>Weight Loss Program</option>
+          <option>Weight Gain Program</option>
+          <option>Corporate / Group Enquiry</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-lbl">Price Package</label>
+        <select class="form-sel" id="f-package" onchange="packageDropdownChanged()">
+          <option value="">Select Package</option>
+          <option value="Monthly">Monthly</option>
+          <option value="HalfYearly">Half Yearly</option>
+          <option value="Annual">Annual</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-lbl">Selected Plan Details</label>
+        <input type="text" class="form-inp" id="f-plan" placeholder="Select a plan above, or type here" readonly>
+      </div>
+
+      <div class="form-group" id="offer-apply">
+        <label>
+          <input type="checkbox" id="f-apply-offer" checked>
+          <span>
+            <div class="oa-title">Apply offer</div>
+            <div class="oa-sub" id="offer-apply-text">Offer will be applied when you select a plan.</div>
+          </span>
+        </label>
+      </div>
+      
+      <button class="btn-submit" id="submitBtn" onclick="handleSubmit()">
+        <span class="wa-ico">📋</span>
+        <span id="btn-label">Submit Enquiry</span>
+      </button>
+      <div class="form-note">We'll reach out to you shortly to confirm your membership details.</div>
+
+      <!-- SUCCESS STATE -->
+    
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- VISIT PROFILE -->
   <div id="visit-profile">
@@ -2939,24 +2951,6 @@
 
   </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-top">
-      <div class="footer-logo">77<em>·</em>FITNESS STUDIO</div>
-      <ul class="footer-nav">
-        <li><a href="#about">About</a></li>
-        <li><a href="#facilities">Facilities</a></li>
-        <li><a href="#programs">Programs</a></li>
-        <li><a href="#pricing">Membership</a></li>
-        <li><a href="#locations">Locations</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-bottom">
-      <div class="footer-copy">© 2025 77 Fitness Studio. All rights reserved.</div>
-      <div class="footer-locs"><em>Kodambakkam</em> · <em>Nungambakkam</em> · <em>Vadapalani</em></div>
-    </div>
-  </footer>
 
   <script>
     /* GRAIN */
@@ -3048,148 +3042,167 @@ document.addEventListener('keydown', (e) => {
       }, { passive: true });
     })();
 
-    /* PICK PLAN */
-    let activePlan = null;
-    let offerApplied = false;
+ /* PICK PLAN + OFFER CHECKBOX (same behavior style as index1.html, simplified) */
+let activePlan = null;
+let offerApplied = false;
 
-    function parseINR(v) {
-      const n = Number(String(v || '').replace(/[^\d]/g, ''));
-      return Number.isFinite(n) ? n : 0;
+function syncOfferCheckbox(){
+  const wrap=document.getElementById('offer-apply');
+  const cb=document.getElementById('f-apply-offer');
+  const txt=document.getElementById('offer-apply-text');
+  const planInp=document.getElementById('f-plan');
+  const banner=document.getElementById('offer-banner');
+  const obEyebrow=document.getElementById('ob-eyebrow');
+  const obText=document.getElementById('ob-text');
+  const obSavings=document.getElementById('ob-savings');
+  if(!wrap||!cb||!txt||!planInp) return;
+
+  if(!activePlan){
+    wrap.classList.remove('oa-active');
+    cb.checked=false;
+    cb.disabled=true;
+    offerApplied=false;
+    txt.textContent='Select a plan above to unlock this offer.';
+    planInp.value='';
+    planInp.placeholder='Select a plan above';
+    if(banner) banner.style.display='none';
+    return;
+  }
+
+  wrap.classList.add('oa-active');
+  cb.disabled=false;
+  cb.checked=offerApplied;
+
+  if(offerApplied){
+    planInp.value=`${activePlan.planName} — ${activePlan.discount} OFF (${activePlan.price})`;
+    if(banner&&obEyebrow&&obText&&obSavings){
+      banner.style.display='block';
+      obEyebrow.textContent='Offer Applied';
+      obText.innerHTML=`You've applied <strong>${activePlan.discount}</strong> to <strong>${activePlan.planName}</strong>.`;
+      obSavings.textContent=`You save ${activePlan.savings}  →  Your price: ${activePlan.price}`;
     }
+  }else{
+    planInp.value=activePlan.planName;
+    if(banner) banner.style.display='none';
+  }
+}
 
-    function fmtINR(n) {
-      try { return Number(n).toLocaleString('en-IN'); } catch { return String(n); }
-    }
+function pickPlan(planName, discount, savings, price){
+  activePlan={planName,discount,savings,price};
+  offerApplied=true;   // auto-apply discount when coming from a pricing card
 
-    function syncOfferCheckbox() {
-      const wrap = document.getElementById('offer-apply');
-      const cb = document.getElementById('f-apply-offer');
-      const txt = document.getElementById('offer-apply-text');
-      const planInp = document.getElementById('f-plan');
-      const banner = document.getElementById('offer-banner');
-      const obEyebrow = document.getElementById('ob-eyebrow');
-      const obText = document.getElementById('ob-text');
-      const obSavings = document.getElementById('ob-savings');
-      if (!wrap || !cb || !txt || !planInp) return;
+  const pkgDropdown = document.getElementById('f-package');
+  if(pkgDropdown) {
+    if(planName.toLowerCase().includes('monthly') || planName.toLowerCase().includes('starter')) pkgDropdown.value = 'Monthly';
+    else if(planName.toLowerCase().includes('annual') || planName.toLowerCase().includes('elite')) pkgDropdown.value = 'Annual';
+    else if(planName.toLowerCase().includes('half') || planName.toLowerCase().includes('transform')) pkgDropdown.value = 'HalfYearly';
+    else pkgDropdown.value = '';
+  }
 
-      if (!activePlan) {
-        wrap.classList.remove('oa-active');
-        cb.checked = false;
-        cb.disabled = true;
-        offerApplied = false;
-        txt.textContent = 'Select a plan above to unlock this offer.';
-        planInp.value = '';
-        planInp.placeholder = 'Select a plan above';
-        if (banner) banner.style.display = 'none';
-        return;
-      }
+  // Also tick the checkbox visually
+  const cb = document.getElementById('f-apply-offer');
+  if(cb) cb.checked = true;
 
-      wrap.classList.add('oa-active');
-      cb.disabled = false;
-      cb.checked = offerApplied;
+  syncOfferCheckbox();
+  document.getElementById('contact').scrollIntoView({behavior:'smooth',block:'start'});
+}
 
-      const pct = Number(String(activePlan.discount || '').replace(/[^\d.]/g, '')) || 0;
-      const saved = parseINR(activePlan.savings);
-      const shownDiscounted = parseINR(activePlan.price);
-      const base = saved ? (shownDiscounted + saved) : (pct ? Math.round(shownDiscounted / (1 - pct / 100)) : 0);
-      const discounted = base && pct ? Math.round(base * (1 - pct / 100)) : shownDiscounted;
-      const computedSavings = base ? (base - discounted) : saved;
+function packageDropdownChanged() {
+  const val = document.getElementById('f-package').value;
+  if(!val) {
+    activePlan = null;
+    offerApplied = false;
+    document.getElementById('f-plan').value = '';
+    syncOfferCheckbox();
+    return;
+  }
+  // Actual prices and discounts
+  const pkgMap = {
+    'Monthly':    { label: 'Monthly Plan',     discount: '5%',  orig: 6999,  discounted: 6649,  savings: '₹350'  },
+    'HalfYearly': { label: 'Half Yearly Plan', discount: '10%', orig: 21999, discounted: 19799, savings: '₹2,200' },
+    'Annual':     { label: 'Annual Plan',       discount: '15%', orig: 26999, discounted: 22949, savings: '₹4,050' }
+  };
+  const p = pkgMap[val];
+  activePlan = { planName: p.label, discount: p.discount, savings: p.savings, price: `₹${p.discounted.toLocaleString('en-IN')}` };
+  offerApplied = false;
+  syncOfferCheckbox();
+}
 
-      txt.textContent = offerApplied
-        ? `${pct}% OFF applied — ₹${fmtINR(base)} → ₹${fmtINR(discounted)} (save ₹${fmtINR(computedSavings)})`
-        : `${pct}% OFF available — tick to apply`;
-
-      if (offerApplied) {
-        planInp.value = `${activePlan.planName} — ${pct}% OFF (₹${fmtINR(discounted)})`;
-        if (banner && obEyebrow && obText && obSavings) {
-          banner.style.display = 'block';
-          obEyebrow.textContent = 'Offer Applied';
-          obText.innerHTML = `You've applied <strong>${pct}% OFF</strong> to <strong>${activePlan.planName}</strong>.`;
-          obSavings.textContent = `₹${fmtINR(base)} → ₹${fmtINR(discounted)}`;
-        }
-      } else {
-        planInp.value = '';
-        planInp.placeholder = 'Tick "Apply offer" to confirm selected plan';
-        if (banner) banner.style.display = 'none';
-      }
-    }
-
-    function pickPlan(planName, discount, savings, price) {
-      activePlan = { planName, discount, savings, price };
-      offerApplied = false;
+/* checkbox + close button */
+(function(){
+  const cb=document.getElementById('f-apply-offer');
+  const close=document.getElementById('ob-close');
+  if(!cb) return;
+  cb.addEventListener('change',()=>{
+    offerApplied=!!cb.checked;
+    if(offerApplied){ alert('✅ Offer applied to your selected plan!'); }
+    syncOfferCheckbox();
+  });
+  if(close){
+    close.addEventListener('click',()=>{
+      const banner=document.getElementById('offer-banner');
+      if(banner) banner.style.display='none';
+      cb.checked=false;
+      offerApplied=false;
       syncOfferCheckbox();
+    });
+  }
+  syncOfferCheckbox();
+})();
+/* ══ FORM SUBMISSION ══ */
+function handleSubmit() {
+  const name = document.getElementById('f-name').value.trim();
+  const phone = document.getElementById('f-phone').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  const location = document.getElementById('f-location').value;
+  const interest = document.getElementById('f-interest').value;
+  const plan = document.getElementById('f-plan').value || "General Enquiry";
 
-      document.getElementById('dh-plan-lbl').textContent = planName;
-      document.getElementById('dh-amount').textContent = price;
-      document.getElementById('dh-sub').textContent = `${discount} limited-time offer applied`;
-      document.getElementById('submit-success').style.display = 'none';
-      document.getElementById('submitBtn').style.display = 'flex';
-      document.getElementById('btn-label').textContent = 'Submit Enquiry via WhatsApp';
-      document.getElementById('submitBtn').style.background = '';
-      document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+  // ✅ Validation
+  if (!name) {
+    alert("Enter your name");
+    return;
+  }
 
-    /* WHATSAPP SUBMIT */
-    function sendToWhatsApp() {
-      const name = document.getElementById('f-name').value.trim();
-      const phone = document.getElementById('f-phone').value.trim();
-      const email = document.getElementById('f-email').value.trim();
-      const location = document.getElementById('f-location').value;
-      const interest = document.getElementById('f-interest').value;
-      const plan = document.getElementById('f-plan').value.trim();
-      const goals = document.getElementById('f-goals').value.trim();
-      if (!name) { const el = document.getElementById('f-name'); el.style.borderColor = 'var(--red)'; el.focus(); setTimeout(() => el.style.borderColor = '', 2500); return; }
-      const offerLine = (activePlan && offerApplied) ? `🏷️ *Offer Applied:* ${activePlan.discount} OFF — You save ${activePlan.savings}` : '';
-      const msg = [
-        `🏋️ *New Enquiry — 77 Fitness Studio*`, ``,
-        `👤 *Name:* ${name}`,
-        `📞 *Mobile:* ${phone || 'Not provided'}`,
-        `📧 *Email:* ${email || 'Not provided'}`,
-        `📍 *Location:* ${location}`,
-        `💡 *Interest:* ${interest}`,
-        plan ? `📋 *Plan Selected:* ${plan}` : '',
-        offerLine,
-        goals ? `\n🎯 *Goals:*\n${goals}` : '',
-        ``, `_Sent via 77fitness.in_`
-      ].filter(Boolean).join('\n');
-      const url = `https://wa.me/917871177779?text=${encodeURIComponent(msg)}`;
-      const lbl = document.getElementById('btn-label'), btn = document.getElementById('submitBtn');
-      lbl.textContent = 'Opening WhatsApp…'; btn.style.background = '#128C7E';
-      setTimeout(() => {
-        window.open(url, '_blank');
-        const planInfo = activePlan ? `${activePlan.planName} · ${activePlan.discount} OFF · Save ${activePlan.savings}` : 'Enquiry submitted';
-        document.getElementById('ss-plan-info').textContent = planInfo;
-        document.getElementById('submit-success').style.display = 'block';
-        btn.style.display = 'none';
-        setTimeout(() => {
-          document.getElementById('submit-success').style.display = 'none';
-          btn.style.display = 'flex'; btn.style.background = '';
-          lbl.textContent = 'Submit Enquiry ';
-        }, 10000);
-      }, 350);
-    }
+  if (!/^[6-9]\d{9}$/.test(phone)) {
+    alert("Enter valid mobile number");
+    return;
+  }
 
-    /* checkbox */
-    (function () {
-      const cb = document.getElementById('f-apply-offer');
-      const close = document.getElementById('ob-close');
-      if (!cb) return;
-      cb.addEventListener('change', () => {
-        const wasApplied = offerApplied;
-        offerApplied = !!cb.checked;
-        if (!wasApplied && offerApplied) {
-          alert('Offer applied to your selected plan.');
-        }
-        syncOfferCheckbox();
-      });
-      if (close) {
-        close.addEventListener('click', () => {
-          const banner = document.getElementById('offer-banner');
-          if (banner) banner.style.display = 'none';
-        });
-      }
-    })();
+  // ✅ WhatsApp Message
+  const message = `
+🏋️ New Enquiry - 77 Fitness Studio
 
+👤 Name: ${name}
+📞 Phone: ${phone}
+📧 Email: ${email || 'Not provided'}
+📍 Location: ${location}
+💡 Interest: ${interest}
+📋 Plan: ${plan}
+
+Sent from website
+  `;
+
+  const url = `https://wa.me/917871177779?text=${encodeURIComponent(message)}`;
+
+  // ✅ Open WhatsApp (no redirect, new tab)
+  window.open(url, "_blank");
+
+  // ✅ Show success message
+  document.getElementById('submit-success').style.display = 'block';
+  document.getElementById('ss-plan-info').textContent = plan;
+
+  // ✅ Reset form
+  document.getElementById('f-name').value = "";
+  document.getElementById('f-phone').value = "";
+  document.getElementById('f-email').value = "";
+  document.getElementById('f-plan').value = "";
+
+  // Hide after 5 sec
+  setTimeout(() => {
+    document.getElementById('submit-success').style.display = 'none';
+  }, 5000);
+}
     /* GALLERY DRAG */
     (function () { const t = document.querySelector('.gal-track'); let d = false, sx = 0, sl = 0; t.addEventListener('mousedown', e => { d = true; t.style.cursor = 'grabbing'; sx = e.pageX - t.offsetLeft; sl = t.scrollLeft; }); t.addEventListener('mouseleave', () => { d = false; t.style.cursor = ''; }); t.addEventListener('mouseup', () => { d = false; t.style.cursor = ''; }); t.addEventListener('mousemove', e => { if (!d) return; e.preventDefault(); t.scrollLeft = sl - (e.pageX - t.offsetLeft - sx) * 1.3; }); })();
   </script>
