@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Membership & Contact | 77 Fitness Studio Chennai</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
   --nav-h: 72px;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 16px;overflow-x: hidden;width: 100%; }
 body { font-family: 'Barlow', sans-serif; background: var(--black); color: var(--white); overflow-x: hidden; cursor: none; }
 body.menu-open { overflow: hidden; }
 img { display: block; max-width: 100%; }
@@ -99,7 +99,7 @@ body.menu-open .nav-burger{display:none;}
 #mobile-menu.open .mm-footer { opacity: 1; }
 
 /* PAGE HERO */
-#page-hero { min-height: 100svh; position: relative; display: flex; align-items: flex-end; overflow: hidden; }
+#page-hero {height: 100dvh; min-height: 100dvh; position: relative; display: flex; align-items: flex-end; overflow: hidden; }
 .page-hero-bg { position: absolute; inset: 0; background: url('https://uploads.onecompiler.io/4445zjavc/44cbkprtu/At%2077%2C%20we%E2%80%99ve%20created%20a%20space%20where%20ambiance%20meets%20excellence.%20From%20the%20moment%20you%20walk%20in%2C%20the%20s.jpg') center/cover no-repeat; filter: grayscale(100%) brightness(.22); transform: scale(1.06); animation: heroPan 14s var(--ease-out-expo) forwards; }
 @keyframes heroPan { to { transform: scale(1); } }
 .page-hero-grid { position: absolute; inset: 0; z-index: 1; background-image: repeating-linear-gradient(90deg,transparent,transparent 99px,rgba(255,255,255,.015) 99px,rgba(255,255,255,.015) 100px), repeating-linear-gradient(0deg,transparent,transparent 99px,rgba(255,255,255,.01) 99px,rgba(255,255,255,.01) 100px); }
