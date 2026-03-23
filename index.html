@@ -492,80 +492,6 @@ footer { background: var(--off-black); border-top: 1px solid var(--g1); padding:
   </div>
 </div>
 
-<!-- PRICING — no toggle, three fixed cards -->
-<section id="pricing">
-  <div class="price-header" data-anim>
-    <div class="s-label">Membership</div>
-    <h2 class="s-title" style="font-size:clamp(32px,5vw,72px)">Simple, transparent plans<br>that <em>reward consistency.</em></h2>
-    <p class="price-subtitle">All memberships include full facility access and group classes. Limited-time offers active now.</p>
-  </div>
-
-  <div class="price-grid">
-
-    <!-- STARTER -->
-    <div class="price-card" id="pc1" data-stagger="0">
-      <div class="offer-strip">
-        <span class="discount-badge">5% OFF</span>
-        <span class="plan-tag">Limited Offer</span>
-      </div>
-      <div class="plan-name">Starter</div>
-     
-      <div class="price-amt"><span class="price-sym">₹</span><span id="pv1">6,999</span></div>
-      <div class="price-per">per month</div>
-      <div class="price-divider"></div>
-      <div class="price-desc">Perfect for getting started, forming habits, or short-term goal phases.</div>
-      <ul class="price-features">
-        <li>Full gym access</li>
-        <li>Group classes included</li>
-        <li>Basic onboarding assessment</li>
-      </ul>
-      <button class="btn-enroll" onclick="pickPlan('Starter Monthly','5%','₹350','₹6,649')">Register Now</button>
-    </div>
-
-    <!-- TRANSFORM -->
-    <div class="price-card star" id="pc2" data-stagger="140">
-      <div class="offer-strip">
-        <span class="discount-badge">10% OFF</span>
-        <span class="plan-tag">Most Popular</span>
-      </div>
-      <div class="plan-name">Transform</div>
-     
-      <div class="price-amt"><span class="price-sym">₹</span><span id="pv2">21,999</span></div>
-      <div class="price-per">per 6 months</div>
-      <div class="price-divider"></div>
-      <div class="price-desc">Balanced commitment period to see visible, sustainable progress.</div>
-      <ul class="price-features">
-        <li>Everything in Starter</li>
-        <li>Priority slots for peak hours</li>
-        <li>Periodic progress reviews</li>
-        <li>Nutrition guidance sessions</li>
-      </ul>
-      <button class="btn-enroll" onclick="pickPlan('Transform Half-Yearly','10%','₹2,200','₹19,799')">Register Now</button>
-    </div>
-
-    <!-- ELITE -->
-    <div class="price-card" id="pc3" data-stagger="280">
-      <div class="offer-strip">
-        <span class="discount-badge">15% OFF</span>
-        <span class="plan-tag">Best Value</span>
-      </div>
-      <div class="plan-name">Elite</div>
-    
-      <div class="price-amt"><span class="price-sym">₹</span><span id="pv3">26,999</span></div>
-      <div class="price-per">per year</div>
-      <div class="price-divider"></div>
-      <div class="price-desc">For those fully committed to long-term strength, health, and transformation.</div>
-      <ul class="price-features">
-        <li>Everything in Transform</li>
-        <li>Best value per month</li>
-        <li>Priority for new program launches</li>
-        <li>Multi-location access</li>
-      </ul>
-      <button class="btn-enroll" onclick="pickPlan('Elite Annual','15%','₹4,050','₹22,949')">Register Now</button>
-    </div>
-
-  </div>
-</section>
 
 <!-- CONTACT -->
 <section id="contact">
@@ -646,21 +572,7 @@ footer { background: var(--off-black); border-top: 1px solid var(--g1); padding:
           <option value="Annual">Annual</option>
         </select>
       </div>
-      <div class="form-group">
-        <label class="form-lbl">Selected Plan Details</label>
-        <input type="text" class="form-inp" id="f-plan" placeholder="Select a plan above, or type here" readonly>
-      </div>
 
-      <div class="form-group" id="offer-apply">
-        <label>
-          <input type="checkbox" id="f-apply-offer" checked>
-          <span>
-            <div class="oa-title">Apply offer</div>
-            <div class="oa-sub" id="offer-apply-text">Offer will be applied when you select a plan.</div>
-          </span>
-        </label>
-      </div>
-      
       <button class="btn-submit" id="submitBtn" onclick="handleSubmit()">
         <span class="wa-ico">📋</span>
         <span id="btn-label">Submit Enquiry</span>
